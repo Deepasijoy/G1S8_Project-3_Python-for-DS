@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Status Predictor</title>
+    <style>
+        /* Separate each input on a new line */
+        input[type="text"],
+        input[type="radio"],
+        select {
+            display: block;
+            margin-bottom: 10px; /* Add spacing between inputs */
+        }
+    </style>
+</head>
+<body>
+<fieldset style="border: 2px solid black; padding: 10px;">
+<h1>House Loan Eligibility Prediction</h1>
+<h3>Please enter the details in order to check your house loan eligibility</h3>
+
+<!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <label for="applicantincome">Applicant Income($)</label>
+    	<input type="text" name="applicantincome" placeholder="Applicant Income" required="required" /><br>
+
+        <label for="coapplicantincome">Co-Applicant Income($)</label>
+        <input type="text" name="coapplicantincome" placeholder="Co-Applicant Income" required="required"/><br>
+
+        <label for="loanamount">Loan Amount in thousands($)</label>
+        <input type="text" name="loanamount" placeholder="Loan Amount" required="required" /><br>
+
+        <label for="loan_amount_term">Loan Amount Term(in months)</label>
+        <input type="text" name="loan_amount_term" placeholedr="Loan Amount Term" required="required" /><br>
+
+        <label for="credit_history">Credit History:</label>
+        <input type="text" name="credit_history" placeholder="Credit History" required="required" /><br>
+
+        <label for="gender">Gender:</label>
+        <select name="gender" id="gender" required="required">
+            <option value="0">Male</option>
+            <option value="1">Female</option>
+        </select><br>
+
+        <label for="married">Married:</label>
+        <select name="married" id="married" required="required">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+        </select><br>
+
+        <label for="dependents">Dependents:</label>
+        <input type="text" name="dependents" placeholder="Dependents" required="required" /><br>
+
+        <label for="education">Education:</label>
+        <select name="education" id="education" required="required">
+            <option value="0">Graduate</option>
+            <option value="1">Not Graduate</option>
+        </select><br>
+
+        <label for="self_employed">Self Employed:</label>
+        <select name="self_employed" id="self_employed" required="required">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+        </select><br>
+
+        <label for="property_area">Property Area:</label>
+        <select name="property_area" id="property_area" required="required">
+            <option value="0">urban</option>
+            <option value="1">semiurban</option>
+            <option value="2">rural</option>
+        </select><br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large"
+                style="background-color: green; border: 1px solid black;">Submit</button><br>
+    </form>
+    <br>
+    <br>
+    <p><strong>{{prediction_text}}</strong></p>
+
+</fieldset>
+</body>
+</html>
