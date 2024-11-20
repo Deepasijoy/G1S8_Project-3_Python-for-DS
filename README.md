@@ -1,19 +1,28 @@
 # G1S8_Project-3_Python-for-DS
-Classification model,pickled and deployed using flask(loan predictor)
-Domain:
-○ Finance and Banking.
-Context:
-Dream Housing Finance company deals in all home loans. They have presence
-across all urban, semi urban and rural areas. Customers first apply for a home
-loan after that company manually validates the customer eligibility for loan.
-Company wants to automate the loan eligibility process based on customer
-detail provided while filling the details online.
-They need a web application where a user can access their website and
-register, login, and enter the required details such as Gender, Marital Status,
-Education, Number of Dependents, Income, Loan Amount, Credit History and
-others for checking the eligibility for the home loan.
+Domain: Finance and Banking
+Objective: Automate the loan eligibility prediction process for Dream Housing Finance to enhance efficiency and reduce manual validation effort.
+
+Project Summary:
+Developed and deployed a loan eligibility prediction model for Dream Housing Finance Company using a logistic regression classification algorithm. The project involved end-to-end development, starting from data preprocessing and model building to deployment via a Flask web application. The web application provides a user-friendly interface for customers to register, log in, input personal and financial details, and check their loan eligibility instantly.
+
+The model was trained on a dataset containing 13 attributes, including demographics, income details, loan amount, and credit history, with Loan Status as the target variable. Key steps included handling missing data, encoding categorical variables, scaling numerical features, and optimizing model accuracy.
+
+The Flask application integrates with a MySQL database to manage user authentication and stores user details. The model was pickled for seamless integration with the application, enabling real-time predictions.
+
+Key Features:
+
+User-friendly interface for registration, login, and loan prediction.
+Automated backend processes including data validation and loan eligibility prediction.
+Integration with MySQL for user management.
+Secure and scalable application architecture for deployment.
+Tools and Technologies: Python (Flask, Sklearn, Pandas, NumPy), MySQL, Logistic Regression, Data Visualization, Pickle.
+
+This project showcases my ability to combine data science techniques with web development to solve real-world business problems in the Finance and Banking domain.
 
 Objective of Project:Need to predict customer eligibility to avail a loan.
+
+
+
 
 Data Set description:
 The data set contains 13 attributes of which Loan Status is the target variable.
@@ -31,16 +40,3 @@ The data set contains 13 attributes of which Loan Status is the target variable.
 12. Property area -Urban/Semi Urban/Rural
 13. Loan Status (Target)
 
-Steps undertaken:
-
-1.Import the data set and understand the data sample.
-2.Checked for missing values and drop redundant column :- loan id dropped
-3.There were missing values in both categorical data and numeric data which was replaced  by taking the mode in categorical and mean in numeric data
-4.Visualised the loan status with respect to various categorical features.
-5.Encoded  the categorical variables manually
-6. Using sklearn model_selection train_test_split split data into training and test data
-7. Using Standard Scaler scaled data
-8. Performed Logistic Regression and checked accuracy on both train and test data sets
-9. Pickled the model and saved it in Flask app model1.pkl file
-10.Created application file that is designed to call some of the implemented APIs and methods, such as connecting to the MYSQL database and creating a table for the database, and APIs such as user to register, login, enter_details, predict, and logout.
-11.Once app is run the user can then signup enter his  details and predict if he can get a loan or not.
